@@ -1,0 +1,30 @@
+{
+    "name": "gufy/whmcs",
+    "description": "WHMCS API for Laravel 4",
+    "keywords": ["Whmcs", "API", "laravel", "php"],
+    "homepage": "https://github.com/mgufrone/whmcs-api.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mochamad Gufron",
+            "email": "mgufronefendi@gmail.com"
+        },
+        {
+            "name": "Rodrigo Queiroz",
+            "email": "rodrigo@queiroz.org"
+        }
+    ],
+    "require": {
+        "illuminate/support": "4.2.x",
+        "guzzlehttp/guzzle": "~4"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Gufy\\Whmcs": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
