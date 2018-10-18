@@ -110,9 +110,9 @@ And then, copy or move your old configuration from `app/config/packages/queiroz/
 
 If your site has multiple whmcs configuration, you sure will do override configuration like this
 
-	\Config::set('whmcs::url','http://whmcs.site.com/includes/api.php');
-	\Config::set('whmcs::password','your_password');
-	\Config::set('whmcs::username','your_username');
+	\Config::set('whmcs::url', 'http://whmcs.site.com/includes/api.php');
+	\Config::set('whmcs::password', 'your_password');
+	\Config::set('whmcs::username', 'your_username');
 
 Please make sure the namespace of your configuration is `whmcs` not `whmcs-api`.
 
