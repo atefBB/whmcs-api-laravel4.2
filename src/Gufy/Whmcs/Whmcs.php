@@ -4,6 +4,14 @@ use Gufy\Whmcs\CurlClient;
 
 class Whmcs
 {
+    /**
+     * Execute API action.
+     *
+     * @param  string $action
+     * @param  array  $params
+     * @return stdClass
+     * @throws Exception
+     */
     public function execute($action, $params = [])
     {
         // Initiate
@@ -39,12 +47,18 @@ class Whmcs
 
         try {
             return $this->processResponse($response);
-        } catch (\GuzzleHttp\Exception\ParseException $e) {
-            return $this->processResponse($response->xml());
+        } catch (Exception $e) {
+            throw $e;
         }
-
     }
 
+    /**
+     * Process API response.
+     *
+     * @param  mixed $response
+     * @return stdClass
+     * @throws Exception
+     */
     public function processResponse($response)
     {
         if (isset($response['result']) && 'error' === $response['result']
@@ -60,5 +74,4 @@ class Whmcs
     {
         return $this->execute($action, $params);
     }
-
 }
