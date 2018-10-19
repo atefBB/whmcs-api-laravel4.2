@@ -38,7 +38,7 @@ class Whmcs
         $response = $client->post($url, $params);
 
         try {
-            return $this->processResponse($response->json());
+            return $this->processResponse($response);
         } catch (\GuzzleHttp\Exception\ParseException $e) {
             return $this->processResponse($response->xml());
         }
