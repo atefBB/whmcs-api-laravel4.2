@@ -1,6 +1,6 @@
 <?php namespace Gufy\Whmcs;
 
-use GuzzleHttp\Client;
+use Gufy\Whmcs\CurlClient;
 
 class Whmcs
 {
@@ -34,8 +34,8 @@ class Whmcs
         // unset url
         unset($params['url']);
 
-        $client   = new Client;
-        $response = $client->post($url, ['body' => $params]);
+        $client   = new CurlClient;
+        $response = $client->post($url, $params);
 
         try {
             return $this->processResponse($response->json());
