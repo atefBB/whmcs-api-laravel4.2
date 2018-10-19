@@ -66,7 +66,7 @@ class Whmcs
             throw new \Exception("WHMCS Error : " . $response['message']);
         }
 
-        return json_decode(json_encode($response));
+        return is_string($response) ? json_decode(json_encode($response)) : $response;
     }
 
     // using magic method
