@@ -18,14 +18,14 @@ class CurlClient
             $response = curl_exec($ch);
 
             if (curl_error($ch)) {
-                throw new Exception('Unable to connect: ' . curl_errno($ch) . ' - ' . curl_error($ch));
+                throw new \Exception('Unable to connect: ' . curl_errno($ch) . ' - ' . curl_error($ch));
             }
 
             curl_close($ch);
 
             return json_decode($response, true);
         } catch (Exception $e) {
-            throw new Exception(
+            throw new \Exception(
                 sprintf("Error while calling %s URL, with message: %s", $url, $e->getMessage())
             );
         }
